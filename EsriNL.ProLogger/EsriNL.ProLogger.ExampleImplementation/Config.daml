@@ -1,0 +1,37 @@
+﻿<ArcGIS defaultAssembly="EsriNL.ProLogger.ExampleImplementation.dll" defaultNamespace="EsriNL.ProLogger.ExampleImplementation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{9e01145f-d1c8-489c-9926-2f5e32841de1}" version="1.0" desktopVersion="2.1.10257">
+    <Name>EsriNL.ProLogger.ExampleImplementation</Name>
+    <Description>EsriNL.ProLogger.ExampleImplementation description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>hulzen</Author>
+    <Company>Acme</Company>
+    <Date>11-Apr-2018 11:09:09, 2018</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="EsriNL_ProLogger_ExampleImplementation_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="EsriNL.ProLogger.ExampleImplementation_Tab1" caption="New Tab">
+          <group refID="EsriNL.ProLogger.ExampleImplementation_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="EsriNL_ProLogger_ExampleImplementation_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="EsriNL_ProLogger_ExampleImplementation_HelloWorldButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="EsriNL_ProLogger_ExampleImplementation_HelloWorldButton" caption="HelloWorldButton" className="HelloWorldButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

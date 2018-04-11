@@ -1,0 +1,50 @@
+﻿<ArcGIS defaultAssembly="EsriNL.ProLogger.dll" defaultNamespace="EsriNL.ProLogger" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{a39525d5-875f-4f58-896b-cf796904301a}" version="0.1.0" desktopVersion="2.1.10257">
+    <Name>EsriNL.ProLogger</Name>
+    <Description>EsriNL.ProLogger description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>M  van Hulzen</Author>
+    <Company>Esri Nederland BV</Company>
+    <Date>11-Apr-2018 10:34:16, 2018</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="EsriNL_ProLogger_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="EsriNL_ProLogger_Tab1" caption="EsriNL Logger">
+          <group refID="EsriNL_ProLogger_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="EsriNL_ProLogger_Group1" caption="EsriNL Logger" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <button refID="EsriNL_ProLogger_LoggerPane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="EsriNL_ProLogger_LoggerPane_ShowButton" caption="Show LoggerPane" className="LoggerPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+        <button id="EsriNL_ProLogger_LoggerPane_MenuButton" caption="Burger Menu Button" className="LoggerPane_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Burger Menu Button">ToolTip<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="EsriNL_ProLogger_LoggerPane" caption="LoggerPane" className="LoggerPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="LoggerPaneView" />
+        </dockPane>
+      </dockPanes>
+      <menus>
+        <menu id="EsriNL_ProLogger_LoggerPane_Menu" caption="Options" contextMenu="true">
+          <button refID="EsriNL_ProLogger_LoggerPane_MenuButton" />
+        </menu>
+      </menus>
+    </insertModule>
+  </modules>
+</ArcGIS>
