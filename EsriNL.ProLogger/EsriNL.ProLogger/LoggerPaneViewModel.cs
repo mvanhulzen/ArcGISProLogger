@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace EsriNL.ProLogger
         protected LoggerPaneViewModel()
         {
             _instance = this;
-            AddMessage(new LogMessage("First: version: 0.1.0.0", LogLevel.INFO));
+            AddMessage(new LogMessage("First: version: 0.1.0.1", LogLevel.INFO));
         }
 
         public void AddMessage(LogMessage debugMessage)
@@ -26,6 +27,7 @@ namespace EsriNL.ProLogger
             Application.Current.Dispatcher.Invoke(() =>
             {
                 Messages.Add(debugMessage);
+                Debug.WriteLine(debugMessage.ToString());
             });
         }
 

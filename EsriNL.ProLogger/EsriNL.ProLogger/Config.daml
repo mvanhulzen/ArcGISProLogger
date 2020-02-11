@@ -1,4 +1,5 @@
-﻿<ArcGIS defaultAssembly="EsriNL.ProLogger.dll" defaultNamespace="EsriNL.ProLogger" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="EsriNL.ProLogger.dll" defaultNamespace="EsriNL.ProLogger" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{a39525d5-875f-4f58-896b-cf796904301a}" version="0.1.0" desktopVersion="2.1.10257">
     <Name>EsriNL.ProLogger</Name>
     <Description>EsriNL.ProLogger description</Description>
@@ -15,7 +16,7 @@
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="EsriNL_ProLogger_Tab1" caption="EsriNL Logger">
-          <group refID="EsriNL_ProLogger_Group1"/>
+          <group refID="EsriNL_ProLogger_Group1" />
         </tab>
       </tabs>
       <groups>
