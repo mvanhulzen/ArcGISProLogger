@@ -1,8 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ArcGIS defaultAssembly="EsriNL.ProLogger.dll" defaultNamespace="EsriNL.ProLogger" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+﻿<ArcGIS defaultAssembly="EsriNL.ProLogger.dll" defaultNamespace="EsriNL.ProLogger" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{a39525d5-875f-4f58-896b-cf796904301a}" version="0.1.0" desktopVersion="2.1.10257">
     <Name>EsriNL.ProLogger</Name>
-    <Description>EsriNL.ProLogger description</Description>
+    <Description>EsriNL.ProLogger description v0.1.0.2</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>M  van Hulzen</Author>
     <Company>Esri Nederland BV</Company>
@@ -25,6 +24,7 @@
         <group id="EsriNL_ProLogger_Group1" caption="EsriNL Logger" appearsOnAddInTab="false">
           <!-- host controls within groups -->
           <button refID="EsriNL_ProLogger_LoggerPane_ShowButton" size="large" />
+          <!--<button refID="EsriNL_ProLogger_Controls_ApplicationSettings_ShowPropertySheet" size="large" />-->
         </group>
       </groups>
       <controls>
@@ -35,6 +35,9 @@
         <button id="EsriNL_ProLogger_LoggerPane_MenuButton" caption="Burger Menu Button" className="LoggerPane_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Burger Menu Button">ToolTip<disabledText /></tooltip>
         </button>
+        <!--<button id="EsriNL_ProLogger_Controls_ApplicationSettings_ShowPropertySheet" caption="Show ApplicationSettings" className="EsriNL.ProLogger.Controls.ApplicationSettings_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Property Sheet">Show Property Sheet<disabledText /></tooltip>
+        </button>-->
       </controls>
       <dockPanes>
         <dockPane id="EsriNL_ProLogger_LoggerPane" caption="LoggerPane" className="LoggerPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
@@ -48,4 +51,11 @@
       </menus>
     </insertModule>
   </modules>
+  <propertySheets>
+    <updateSheet refID="esri_core_optionsPropertySheet" >
+      <insertPage id="EsriNL_ProLogger_Controls_ApplicationSettings" caption="EsriNL Pro Logger" className="EsriNL.ProLogger.Controls.ApplicationSettingsViewModel" group="Application">
+        <content className="EsriNL.ProLogger.Controls.ApplicationSettingsView" />
+      </insertPage>
+    </updateSheet>
+  </propertySheets>
 </ArcGIS>

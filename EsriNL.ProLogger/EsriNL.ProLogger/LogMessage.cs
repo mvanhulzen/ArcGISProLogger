@@ -10,10 +10,8 @@ namespace EsriNL.ProLogger
 
     class LogMessage
     {
-        public LogMessage(string message = null, LogLevel loglevel = LogLevel.DEBUG)
+        public LogMessage()
         {
-            this.Message = message;
-            this.LogLevel = loglevel;
             this.LogDateTime = DateTime.Now;
         }
 
@@ -22,7 +20,7 @@ namespace EsriNL.ProLogger
 
         public string Message { get; set; }
 
-        public LogLevel LogLevel { get; set; }
+        public log4net.Core.Level LogLevel { get; set; }
 
         public override string ToString()
         {

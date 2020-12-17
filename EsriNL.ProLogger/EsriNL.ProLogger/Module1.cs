@@ -24,53 +24,50 @@ namespace EsriNL.ProLogger
             }
         }
 
+        protected override bool Initialize()
+        {
+            //LoggingLogic.Instance.Initialize();
+            LogInfo("===============================");
+            LogInfo("Start EsriNL.ProLogger v0.1.0.2");
+            return base.Initialize();
+        }
+
         public void LogInfo(string message)
         {
-            LogMessage(message, LogLevel.INFO);
+            LoggingLogic.Instance.LogMessage(message, log4net.Core.Level.Info);
         }
 
         public void LogDebug(string message)
         {
-            LogMessage(message, LogLevel.DEBUG);
+            LoggingLogic.Instance.LogMessage(message, log4net.Core.Level.Debug);
         }
 
         public void LogWarning(string message)
         {
-            LogMessage(message, LogLevel.WARN);
+            LoggingLogic.Instance.LogMessage(message, log4net.Core.Level.Warn);
         }
 
         public void LogError(string message)
         {
-            LogMessage(message, LogLevel.ERROR);
+            LoggingLogic.Instance.LogMessage(message, log4net.Core.Level.Error);
         }
 
         public void LogException(Exception ex, string message = null)
         {
             if (!string.IsNullOrEmpty(message))
             {
-                LogMessage(message, LogLevel.FATAL);
+                LoggingLogic.Instance.LogMessage(message, log4net.Core.Level.Fatal);
             }
 
             string exceptionMessage = $@"{ex.Message}\r\n{ex.StackTrace}";
-            LogMessage(exceptionMessage, LogLevel.FATAL);
+            LoggingLogic.Instance.LogMessage(exceptionMessage, log4net.Core.Level.Fatal);
             if (ex.InnerException != null)
             {
                 LogException(ex.InnerException, "");
             }
         }
 
-        private void LogMessage(string message, LogLevel level)
-        {
-            LogMessage logMessage = new LogMessage
-            {
-                LogLevel = level,
-                Message = message
-            };
-            if (LoggerPaneViewModel.Instance != null)
-            {
-                LoggerPaneViewModel.Instance.AddMessage(logMessage);
-            }
-        }
+
 
         #region Overrides
         /// <summary>

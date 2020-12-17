@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EsriNL.ProLogger.Properties" GeneratedClassName="ProLoggerSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SaveToLogFileSetting" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OtherSetting" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UpgradeNeeded" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LogFilePathSetting" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Temp\Logging\EsriNL_Pro_Logger_[date].log</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

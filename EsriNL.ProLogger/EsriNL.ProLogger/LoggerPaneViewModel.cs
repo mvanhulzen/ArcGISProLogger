@@ -19,7 +19,7 @@ namespace EsriNL.ProLogger
         protected LoggerPaneViewModel()
         {
             _instance = this;
-            AddMessage(new LogMessage("First: version: 0.1.0.1", LogLevel.INFO));
+            //AddMessage(new LogMessage() { Message = "First: version: 0.1.0.1", LogLevel = log4net.Core.Level.Info });
         }
 
         public void AddMessage(LogMessage debugMessage)
@@ -27,6 +27,15 @@ namespace EsriNL.ProLogger
             Application.Current.Dispatcher.Invoke(() =>
             {
                 Messages.Add(debugMessage);
+                Debug.WriteLine(debugMessage.ToString());
+            });
+        }
+
+        public void AddMessage(log4net.Core.LoggingEvent debugMessage)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                //Messages.Add(debugMessage);
                 Debug.WriteLine(debugMessage.ToString());
             });
         }
